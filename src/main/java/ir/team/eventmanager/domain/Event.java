@@ -17,12 +17,12 @@ public class Event extends BaseEntity{
 
     private BigDecimal cost;
     private LocalDateTime occurrenceDate;
-    @Column(columnDefinition = "when_bill_checkout_this_column_change_to_true")
+    //when_bill_checkout_this_column_change_to_true
     private Boolean isCleared;
 
     //one way connection so there is no need to map this class in catalogValue
     @ManyToOne
-    @JoinColumn(nullable = false,name = "EVENT_REASON",columnDefinition = "reason_of_event_payment")
+    @JoinColumn(nullable = false,name = "EVENT_REASON")
     private CatalogValue reason;
 
     @ManyToOne

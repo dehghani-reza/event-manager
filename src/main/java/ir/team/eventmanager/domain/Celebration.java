@@ -20,8 +20,7 @@ public class Celebration extends BaseEntity {
     //one way connection so there is no need to map this class in catalogValue
     @ManyToOne
     @JoinColumn(nullable = false,
-            name = "CATALOG_VALUE_ID",
-            columnDefinition = "title_of_celebration")
+            name = "CATALOG_VALUE_ID")
     private CatalogValue title;
 
     @ManyToOne
