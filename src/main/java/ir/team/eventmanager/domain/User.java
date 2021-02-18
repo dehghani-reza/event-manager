@@ -21,7 +21,7 @@ public class User extends BaseEntity {
 
     private Boolean isEnable;
 
-    @OneToOne(cascade = {CascadeType.MERGE,CascadeType.PERSIST,CascadeType.REFRESH})
+    @OneToOne(cascade = {CascadeType.MERGE,CascadeType.PERSIST,CascadeType.REFRESH},fetch = FetchType.LAZY)
     @MapsId
     @JoinColumn(name = "PERSON_ID")
     private Person person;

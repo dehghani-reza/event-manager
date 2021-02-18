@@ -4,23 +4,13 @@ import ir.team.eventmanager.domain.Person;
 import ir.team.eventmanager.domain.Role;
 import ir.team.eventmanager.domain.User;
 import ir.team.eventmanager.dto.user.CreateUserDTO;
-import ir.team.eventmanager.repositories.BaseEntityRepository;
-import ir.team.eventmanager.services.BaseService;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.time.Instant;
 import java.time.ZoneId;
 
 @Service
-public class CreateUserAndPersonByManagerImpl extends BaseService implements CreateUserAndPersonByManager{
-
-    private final BaseEntityRepository baseRepository;
-
-    @Autowired
-    public CreateUserAndPersonByManagerImpl(BaseEntityRepository baseRepository) {
-        this.baseRepository = baseRepository;
-    }
+public class CreateUserAndPersonByManagerImpl extends BaseUserService implements CreateUserAndPersonByManager{
 
     public boolean createUserAndPersonByManager(CreateUserDTO userDTO){
         boolean isCompleted = false;
@@ -38,7 +28,7 @@ public class CreateUserAndPersonByManagerImpl extends BaseService implements Cre
         user.setRole(Role.USER);
         user.setPerson(person);
         try {
-            baseRepository.save(user);
+            repository.save(user);
         }catch (Exception ex){
             logger.error("new user and person can't save",ex);
             return isCompleted;

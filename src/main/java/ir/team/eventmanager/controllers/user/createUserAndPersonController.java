@@ -18,7 +18,7 @@ public class createUserAndPersonController extends UserController{
     }
 
     @PostMapping(value = "/create-user-and-person")
-    private boolean createUserAndPerson(@RequestBody CreateUserDTO userDTO){
+    public boolean createUserAndPerson(@RequestBody CreateUserDTO userDTO){
         return service.createUserAndPersonByManager(userDTO);
     }
 }
