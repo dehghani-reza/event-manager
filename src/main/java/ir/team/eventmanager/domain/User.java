@@ -13,7 +13,9 @@ import java.util.List;
 @Entity
 public class User extends BaseEntity {
 
+    @Column(unique = true,nullable = false)
     private String username;
+    @Column(nullable = false)
     private String password;
     private String email;
 

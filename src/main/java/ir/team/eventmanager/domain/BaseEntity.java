@@ -16,5 +16,5 @@ public abstract class BaseEntity implements Serializable {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
-    private Boolean isDeleted;
+    private Boolean isDeleted = false;
 }

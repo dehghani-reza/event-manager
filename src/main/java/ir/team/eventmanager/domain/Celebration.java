@@ -13,6 +13,7 @@ import java.time.LocalDate;
 @Entity
 public class Celebration extends BaseEntity {
 
+    @Column(nullable = false)
     private LocalDate occurrenceDate;
     private Integer period;
     private Boolean isRecursive;

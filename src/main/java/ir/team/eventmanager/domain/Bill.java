@@ -16,6 +16,7 @@ public class Bill extends BaseEntity{
     private Double balance;
 
     private Boolean isTimeForCheckOut;
+    @Column(nullable = false)
     private LocalDateTime createdTime;
 
     @ManyToOne
@@ -35,6 +36,6 @@ public class Bill extends BaseEntity{
     }
 
     //can't set balance its calculated automatically
-    public void setBalance() {
+    public void setBalance(Double balance) {
     }
 }

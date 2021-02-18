@@ -4,7 +4,7 @@ import static ir.team.eventmanager.domain.Authority.*;
 
 public enum Role {
 
-    MANAGER(SAVE_USER,DELETE_USER,UPDATE_USER,LOAD_USER);
+    MANAGER(SAVE_USER,DELETE_USER,UPDATE_USER,LOAD_USER),USER();
 
     private Authority[] authorities;
 

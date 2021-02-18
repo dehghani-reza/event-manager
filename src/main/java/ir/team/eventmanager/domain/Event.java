@@ -16,6 +16,7 @@ import java.time.LocalDateTime;
 public class Event extends BaseEntity{
 
     private BigDecimal cost;
+    @Column(nullable = false)
     private LocalDateTime occurrenceDate;
     //when_bill_checkout_this_column_change_to_true
     private Boolean isCleared;

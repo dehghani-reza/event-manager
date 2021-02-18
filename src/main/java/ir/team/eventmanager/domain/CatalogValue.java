@@ -13,6 +13,7 @@ import java.util.List;
 @Entity
 public class CatalogValue extends BaseEntity{
 
+    @Column(nullable = false,unique = true)
     private String catalogValueTitle;
 
     @OneToMany(mappedBy = "father",

@@ -13,6 +13,7 @@ import java.util.List;
 @Entity
 public class CatalogGroup extends BaseEntity {
 
+    @Column(nullable = false,unique = true)
     private String catalogGroupName;
 
     @OneToMany(mappedBy = "group",

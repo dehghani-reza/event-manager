@@ -14,10 +14,13 @@ import java.util.List;
 @Entity
 public class Person extends BaseEntity{
 
+    @Column(nullable = false)
     private String firstName;
+    @Column(nullable = false)
     private String lastName;
     private LocalDate dateOfBirth;
     private String phoneNumber;
+    @Column(unique = true)
     private String nationalCode;
 
     @OneToOne(cascade = {CascadeType.MERGE,CascadeType.PERSIST,CascadeType.REFRESH},
