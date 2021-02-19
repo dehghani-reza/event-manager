@@ -3,6 +3,7 @@ package ir.team.eventmanager.domain;
 import ir.team.eventmanager.util.StaticValue;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import org.hibernate.annotations.Where;
 
 import javax.persistence.*;
 import java.math.BigDecimal;
@@ -13,6 +14,7 @@ import java.time.LocalDateTime;
 @NoArgsConstructor
 @Data
 @Entity
+@Where(clause = "IS_DELETED=false")
 public class Event extends BaseEntity{
 
     private BigDecimal cost;

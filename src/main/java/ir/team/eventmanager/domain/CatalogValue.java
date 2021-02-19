@@ -3,6 +3,7 @@ package ir.team.eventmanager.domain;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import org.hibernate.annotations.Where;
 
 import javax.persistence.*;
 import java.util.List;
@@ -11,6 +12,7 @@ import java.util.List;
 @NoArgsConstructor
 @Data
 @Entity
+@Where(clause = "IS_DELETED=false")
 public class CatalogValue extends BaseEntity{
 
     @Column(nullable = false,unique = true)

@@ -2,6 +2,7 @@ package ir.team.eventmanager.domain;
 
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import org.hibernate.annotations.Where;
 
 import javax.persistence.*;
 import java.time.LocalDateTime;
@@ -10,6 +11,7 @@ import java.util.List;
 @NoArgsConstructor
 @Data
 @Entity
+@Where(clause = "IS_DELETED=false")
 public class Bill extends BaseEntity{
 
     @Transient

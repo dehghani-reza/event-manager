@@ -3,6 +3,7 @@ package ir.team.eventmanager.domain;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import org.hibernate.annotations.Where;
 
 import javax.persistence.*;
 import java.time.LocalDate;
@@ -11,6 +12,7 @@ import java.time.LocalDate;
 @AllArgsConstructor
 @Data
 @Entity
+@Where(clause = "IS_DELETED=false")
 public class Celebration extends BaseEntity {
 
     @Column(nullable = false)

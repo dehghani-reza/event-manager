@@ -3,6 +3,7 @@ package ir.team.eventmanager.domain;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import org.hibernate.annotations.Where;
 
 import javax.persistence.*;
 
@@ -10,6 +11,7 @@ import javax.persistence.*;
 @NoArgsConstructor
 @Data
 @Entity
+@Where(clause = "IS_DELETED=false")
 public class Device extends BaseEntity{
 
     private String ipAddress;
